@@ -1,12 +1,8 @@
-/**
- * Typescript Fundamental
- * ========================
- */
+export {};
 
-/* type annotations
--------------------- */
+/* --------------- type inferences ----------------- */
 
-let awesome: string = "shakeAndBake";
+let awesome = "shakeAndBake";
 
 awesome = "Super ShakeAndBake";
 awesome = awesome.toUpperCase();
@@ -15,7 +11,7 @@ console.log(awesome);
 
 /*  */
 
-let amount: number = 20;
+let amount = 20;
 amount = 12 - 1;
 //amount = "pants"; // X Incorrect;
 

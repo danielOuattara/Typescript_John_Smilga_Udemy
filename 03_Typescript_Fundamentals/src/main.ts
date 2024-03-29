@@ -8,7 +8,11 @@ import { setupCounter } from "./counter.ts";
 // import "./_04_union_types";
 // import "./_05_type_any";
 // import "./_06_practical_example.ts";
-import "./_07_challenge.ts";
+// import "./_07_challenge.ts";
+// import "./_08_Arrays";
+// import "./_09_challenge.ts";
+// import "./_10_objects.ts";
+import "./_11_objects_challenge.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

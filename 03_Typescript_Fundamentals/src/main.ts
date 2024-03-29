@@ -12,7 +12,9 @@ import { setupCounter } from "./counter.ts";
 // import "./_08_Arrays";
 // import "./_09_challenge.ts";
 // import "./_10_objects.ts";
-import "./_11_objects_challenge.ts";
+// import "./_11_objects_challenge.ts";
+// import "./_12_functions.ts";
+import "./_13_functions_challenges.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

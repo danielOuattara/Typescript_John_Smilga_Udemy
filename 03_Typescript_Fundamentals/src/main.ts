@@ -2,7 +2,10 @@ import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
-import "./tutorial.ts";
+import "./_01_type_annotations";
+import "./_02_type_inference";
+import "./_03_challenge";
+import "./_04_union_types";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

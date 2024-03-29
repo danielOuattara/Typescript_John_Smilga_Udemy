@@ -1,3 +1,5 @@
+export {};
+
 /*-------------  challenge  ----------------- */
 
 let greetings: string = "Hello, Typescript";

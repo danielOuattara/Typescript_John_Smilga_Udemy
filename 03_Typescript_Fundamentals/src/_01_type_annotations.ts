@@ -20,16 +20,3 @@ amount = 12 - 1;
 let isAwesome = true;
 isAwesome = false;
 // isAwesome = "shakeAndBake" // X Incorrect
-
-/* type infer
--------------------- */
-
-interface ISomeInterface {
-  name: string;
-  id: number;
-}
-
-let someObject: ISomeInterface = {
-  name: "random",
-  id: 123,
-};

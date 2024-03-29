@@ -2,10 +2,13 @@ import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
-import "./_01_type_annotations";
-import "./_02_type_inference";
-import "./_03_challenge";
-import "./_04_union_types";
+// import "./_01_type_annotations";
+// import "./_02_type_inference";
+// import "./_03_challenge";
+// import "./_04_union_types";
+// import "./_05_type_any";
+// import "./_06_practical_example.ts";
+import "./_07_challenge.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

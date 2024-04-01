@@ -14,7 +14,18 @@ import { setupCounter } from "./counter.ts";
 // import "./_10_objects.ts";
 // import "./_11_objects_challenge.ts";
 // import "./_12_functions.ts";
-import "./_13_functions_challenges.ts";
+// import "./_13_functions_challenges.ts";
+// import "./_14_functions_optional_and_default_params.ts";
+// import "./_15_function_rest_parameters.ts";
+// import "./_16_function_void_keyword.ts";
+// import "./_17_function_type_guards.ts";
+// import "./_18_function_object_as_parameters.ts";
+// import "./_19_function_object_excess_property_check .ts";
+// import "./_20_function_challenge.ts";
+// import "./_21_types_alias.ts";
+// import "./_22_types_alias_challenge.ts";
+// import "./_23_intersection_type.ts";
+import "./_24_computed_types_properties.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

@@ -25,7 +25,15 @@ import { setupCounter } from "./counter.ts";
 // import "./_21_types_alias.ts";
 // import "./_22_types_alias_challenge.ts";
 // import "./_23_intersection_type.ts";
-import "./_24_computed_types_properties.ts";
+// import "./_24_computed_types_properties.ts";
+// import "./_25_interface.ts";
+// import "./_26_interface_and_methods.ts";
+// import "./_27_interface_and_methods_more_options.ts";
+// import "./_28_interface_challenge.ts";
+// import "./_29_interface_merging_and_extending";
+// import "./_30_interface_challenge";
+// import "./_31_type_predicate";
+import "./_32_interface_VS_alias";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

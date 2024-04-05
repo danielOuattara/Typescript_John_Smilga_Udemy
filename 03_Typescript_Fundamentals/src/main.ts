@@ -33,7 +33,11 @@ import { setupCounter } from "./counter.ts";
 // import "./_29_interface_merging_and_extending";
 // import "./_30_interface_challenge";
 // import "./_31_type_predicate";
-import "./_32_interface_VS_alias";
+// import "./_32_interface_VS_alias";
+// import "./_33_tuples.ts";
+// import "./_34_enums.ts";
+// import "./_35_enums_reverse_mapping.ts";
+import "./_36_challenge_Tuple_Enum.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

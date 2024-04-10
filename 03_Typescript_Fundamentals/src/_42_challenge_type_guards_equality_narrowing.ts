@@ -1,5 +1,9 @@
 export {};
-/*------ type guards equality narrowing ------*/
+/*------ type guards equality narrowing ------
+
+In TypeScript, equality narrowing is a form 
+of type narrowing that occurs when you use 
+equality checks like === or !== in your code */
 
 type Dog = { type: "dog"; name: string; bark: () => void };
 type Cat = { type: "cat"; name: string; meow: () => void };

@@ -24,15 +24,27 @@ function addToTasks(task: TypeTask): void {
 }
 
 //-----
-function renderTasks(task: TypeTask): void {
-  const taskLiElement = document.createElement("li");
-  taskLiElement.textContent = task.label;
-  taskUlElement.appendChild(taskLiElement);
-}
-//-----
 function updateLocalStorage(): void {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+//-----
+function renderTasks(task: TypeTask): void {
+  const taskLiElement = document.createElement("li");
+  taskLiElement.textContent = task.label;
+
+  const taskCheckbox = document.createElement("input");
+  taskCheckbox.type = "checkbox";
+  taskCheckbox.checked = task.isCompleted;
+  taskCheckbox.addEventListener("change", () => {
+    task.isCompleted = !task.isCompleted;
+    updateLocalStorage();
+  });
+
+  taskLiElement.appendChild(taskCheckbox);
+  taskUlElement.appendChild(taskLiElement);
+}
+
 tasks.forEach(renderTasks);
 
 //-----

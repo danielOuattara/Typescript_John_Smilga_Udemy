@@ -3,31 +3,21 @@ type TypeTask = {
   isCompleted: boolean;
 };
 
-const tasks: TypeTask[] = [];
-
+//-----
 const taskForm = document.querySelector<HTMLFormElement>(".form")!;
 const formInput = document.querySelector<HTMLInputElement>(".form-input")!;
 const taskUlElement = document.querySelector<HTMLUListElement>(".list")!;
 
-//--------------------------------
-// just for reference on event type definition
-// function createTask(event: SubmitEvent) {
-//   event.preventDefault();
-//   const taskLabel = formInput.value;
-//   if (taskLabel) {
-//     // add task to list
-//     // render tasks
-//     // update local storage
+//----- Load tasks from localStorage
+function loadTasks(): TypeTask[] {
+  const storedTasks = localStorage.getItem("tasks");
+  return storedTasks ? JSON.parse(storedTasks) : [];
+}
 
-//     formInput.value = "";
-//     return;
-//   }
-//   alert("Please enter a task description");
-// }
-// taskForm.addEventListener("submit", createTask);
+//-----
+const tasks: TypeTask[] = loadTasks();
 
-//--------------------------------
-
+//-----
 function addToTasks(task: TypeTask): void {
   tasks.push(task);
   return;
@@ -40,9 +30,10 @@ function renderTasks(task: TypeTask): void {
   taskUlElement.appendChild(taskLiElement);
 }
 //-----
-// function updateLocalStorage(task: TypeTask): void {
-//   const taskInLocal = localStorage.getItem("tasks");
-// }
+function updateLocalStorage(): void {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+tasks.forEach(renderTasks);
 
 //-----
 taskForm.addEventListener("submit", (event) => {
@@ -55,7 +46,9 @@ taskForm.addEventListener("submit", (event) => {
 
     // render tasks
     renderTasks(task);
+
     // update local storage
+    updateLocalStorage();
 
     formInput.value = "";
     return;

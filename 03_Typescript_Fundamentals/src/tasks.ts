@@ -7,7 +7,7 @@ const tasks: TypeTask[] = [];
 
 const taskForm = document.querySelector<HTMLFormElement>(".form")!;
 const formInput = document.querySelector<HTMLInputElement>(".form-input")!;
-const taskListElement = document.querySelector<HTMLUListElement>(".list");
+const taskUlElement = document.querySelector<HTMLUListElement>(".list")!;
 
 //--------------------------------
 // just for reference on event type definition
@@ -30,18 +30,31 @@ const taskListElement = document.querySelector<HTMLUListElement>(".list");
 
 function addToTasks(task: TypeTask): void {
   tasks.push(task);
-  console.log(tasks);
   return;
 }
 
+//-----
+function renderTasks(task: TypeTask): void {
+  const taskLiElement = document.createElement("li");
+  taskLiElement.textContent = task.label;
+  taskUlElement.appendChild(taskLiElement);
+}
+//-----
+// function updateLocalStorage(task: TypeTask): void {
+//   const taskInLocal = localStorage.getItem("tasks");
+// }
+
+//-----
 taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const taskLabel = formInput.value;
   if (taskLabel) {
+    const task = { label: taskLabel, isCompleted: false };
     // add task to list
-    addToTasks({ label: taskLabel, isCompleted: false });
+    addToTasks(task);
 
     // render tasks
+    renderTasks(task);
     // update local storage
 
     formInput.value = "";

@@ -22,3 +22,21 @@ taskForm.addEventListener("submit", (event) => {
   }
   alert("Please enter a task description");
 });
+
+//--------------------------------
+// just for reference on event type definition
+function createTask(event: SubmitEvent) {
+  event.preventDefault();
+  const taskLabel = formInput.value;
+  if (taskLabel) {
+    // add task to list
+    // render tasks
+    // update local storage
+
+    formInput.value = "";
+    return;
+  }
+  alert("Please enter a task description");
+}
+
+taskForm.addEventListener("submit", createTask);

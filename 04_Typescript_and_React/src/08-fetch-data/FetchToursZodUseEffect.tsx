@@ -1,27 +1,28 @@
 import { useState, useEffect, useCallback } from "react";
-import { array, object, Output, parse, string } from "valibot";
+import { z } from "zod";
 
 type TypeProps = {
   url: string;
 };
-const tourSchema = object({
-  id: string(),
-  name: string(),
-  info: string(),
-  image: string(),
-  price: string(),
+
+const tourSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  info: z.string(),
+  image: z.string(),
+  price: z.string(),
   //...etc
 });
 
 // extract the inferred type
-type TypeTour = Output<typeof tourSchema>;
+type TypeTour = z.infer<typeof tourSchema>;
 
-export default function FetchValibot({ url }: TypeProps) {
+export default function FetchZod({ url }: TypeProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<string | null>(null);
   const [tours, setTours] = useState<TypeTour[]>([]);
 
-  const fetchData = useCallback(async (): Promise<void | undefined> => {
+  const fetchTours = useCallback(async (): Promise<void | undefined> => {
     setIsLoading(true);
     try {
       const response = await fetch(url);
@@ -29,10 +30,12 @@ export default function FetchValibot({ url }: TypeProps) {
         throw new Error(`Failed to fetch tours...`);
       }
 
-      const rawData: unknown = await response.json();
-      const result = parse(array(tourSchema), rawData);
-
-      setTours(() => result);
+      const rawData: TypeTour[] = await response.json();
+      const result = tourSchema.array().safeParse(rawData);
+      if (!result.success) {
+        throw new Error(`Invalid data: ${result.error}`);
+      }
+      setTours(() => result.data);
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "there was an error...";
@@ -43,8 +46,8 @@ export default function FetchValibot({ url }: TypeProps) {
   }, [url]);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchTours();
+  }, [fetchTours]);
 
   if (isLoading) {
     return <h3>Loading...</h3>;
@@ -55,13 +58,13 @@ export default function FetchValibot({ url }: TypeProps) {
   }
 
   return (
-    <div>
-      <h2 className="mb-2">Tours Valibot</h2>
+    <>
+      <h2 className="mb-2">Tours Zod</h2>
       {tours.map((tour) => (
         <p key={tour.id} className="mb-1">
           {tour.name}
         </p>
       ))}
-    </div>
+    </>
   );
 }

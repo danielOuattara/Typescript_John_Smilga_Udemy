@@ -91,3 +91,18 @@ export function Component_2() {
     </section>
   );
 }
+
+/* 
+
+import Component, { Component_2 } from "./04-events";
+
+export default function App() {
+  return (
+    <main>
+      <Component />
+      <Component_2 />
+    </main>
+  );
+}
+
+ */

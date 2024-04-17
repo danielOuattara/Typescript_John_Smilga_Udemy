@@ -1,13 +1,13 @@
 // import Component from "./01-return";
 // import Component from "./02-props";
 // import Component from "./03-state";
-import Component, { Component_2 } from "./04-events";
+import Component from "./05-challenge";
 
 export default function App() {
   return (
     <main>
-      <Component />
-      <Component_2 />
+      <Component type="basic" name="Susan" />
+      <Component type="advanced" name="Anna" email="anna@email.com" />
     </main>
   );
 }

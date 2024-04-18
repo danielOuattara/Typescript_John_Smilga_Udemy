@@ -1,6 +1,3 @@
-export default function index() {
-  return <h1 className="text-4xl">index Page</h1>;
-}
 export { default as HomeLayout } from "./HomeLayout";
 export { default as Landing } from "./Landing";
 export { default as SingleProduct } from "./SingleProduct";

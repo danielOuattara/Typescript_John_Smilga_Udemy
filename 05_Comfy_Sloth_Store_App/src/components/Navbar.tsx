@@ -7,7 +7,7 @@ export default function Navbar() {
         <Component.Logo />
         <Component.LinksDropdown />
         <Component.NavLinks />
-        <div className="flex justify-center items-center gap-x-4 ">
+        <div className="flex justify-center items-center gap-x-4">
           <Component.CartButton />
           <Component.ModeToggle />
         </div>

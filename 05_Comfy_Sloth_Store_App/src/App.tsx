@@ -1,5 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { useAppSelector } from "./redux/hooks";
+import {
+  About,
+  Cart,
+  Checkout,
+  Error,
+  HomeLayout,
+  Landing,
+  Login,
+  Orders,
+  Products,
+  Register,
+  SingleProduct,
+} from "./pages";
 
 export default function App() {
   const { name } = useAppSelector((state) => state.userState);

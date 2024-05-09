@@ -9,6 +9,7 @@ export default function Header() {
   const handleLogout = () => {
     navigate("/");
     setUser(null);
+    return;
   };
 
   return (
@@ -22,7 +23,7 @@ export default function Header() {
             </Button>
           </div>
         ) : (
-          <div className="flex gap-x-6 justify-center items-center mr-4">
+          <div className="flex gap-x-6 justify-center items-center -mr-4">
             <Button asChild variant={"link"} size={"sm"}>
               <Link to={"login"}>Sign in / Guest</Link>
             </Button>

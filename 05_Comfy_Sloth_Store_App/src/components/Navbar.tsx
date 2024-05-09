@@ -5,11 +5,11 @@ export default function Navbar() {
     <nav className="bg-muted py-4">
       <div className="align-element flex justify-between items-center">
         <Component.Logo />
-        <Component.LinksDropdown />
+        <Component.NavLinksDropdown />
         <Component.NavLinks />
         <div className="flex justify-center items-center gap-x-4">
-          <Component.CartButton />
           <Component.ModeToggle />
+          <Component.CartButton />
         </div>
       </div>
     </nav>

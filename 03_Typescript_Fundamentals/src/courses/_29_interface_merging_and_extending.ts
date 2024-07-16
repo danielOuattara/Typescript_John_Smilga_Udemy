@@ -13,15 +13,19 @@ interface IDogOwner {
 }
 
 // Usage
+
+//-------
 const person: IPerson = {
   name: "John",
   getDetails() {
     return `Name: ${this.name}`;
   },
-  age: 0, // added after merging
+  age: 30, // added after merging
 };
+
 console.log(person);
 
+//-------
 const pirate: IDogOwner = {
   dogName: "Pirate",
   getDogDetails() {
@@ -35,7 +39,7 @@ console.log(pirate);
 Merging (reopening) an interface in TypeScript 
 is a process where you declare an interface with 
 the same name more than once, and TypeScript will 
-merge their members. */
+merge their content. */
 
 // Merging the interface
 interface IPerson {

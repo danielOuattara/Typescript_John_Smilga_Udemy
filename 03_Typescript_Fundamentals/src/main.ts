@@ -36,7 +36,7 @@ import { setupCounter } from "./counter.ts";
 // import "./courses/_32_interface_VS_alias";
 // import "./courses/_33_tuples.ts";
 // import "./courses/_34_enums.ts";
-// import "./courses/_35_enums_reverse_mapping.ts";
+import "./courses/_35_enums_reverse_mapping.ts";
 // import "./courses/_36_challenge_Tuple_Enum.ts";
 // import "./courses/_37_types_assertion.ts";
 // import "./courses/_38_type_unknown.ts";

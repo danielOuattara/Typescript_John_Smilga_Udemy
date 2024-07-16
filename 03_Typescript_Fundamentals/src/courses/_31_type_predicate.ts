@@ -54,12 +54,13 @@ function getEmployee(): IPerson | IDogOwner | IManager {
 }
 
 const person: IPerson | IDogOwner | IManager = getEmployee();
-// console.log(person);
+console.log(person);
 
 // function isManager(obj: IPerson | IDogOwner | IManager): boolean {
 //   return "managePeople" in obj;
 // }
 
+// type predicate obj is IManager as the return type for "isManager()"
 function isManager(obj: IPerson | IDogOwner | IManager): obj is IManager {
   return "managePeople" in obj;
 }

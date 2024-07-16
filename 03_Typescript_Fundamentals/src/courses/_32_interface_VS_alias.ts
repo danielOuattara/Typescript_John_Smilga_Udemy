@@ -47,12 +47,13 @@ let move: Direction = "up";
 
 /**
  * Interfaces can be merged using declaration merging. 
- * If you define an interface with the same name more 
- * than once, TypeScript will merge their definitions. 
+ * (if you define an interface with the same name more 
+ * than once, TypeScript will merge their definitions.)
  * 
- * Type aliases can't be merged in this way.
+ * Type aliases cannot be merged in this way.
  
  * Interfaces can be implemented by classes, while type aliases cannot.
+ *
  * Type aliases can use computed properties, while interfaces cannot.
 
 */
@@ -79,6 +80,7 @@ john3.greet(); // Outputs: Hello, my name is John
 
 const propName = "age";
 
+// computed properties
 type Animal = {
   [propName]: number;
 };

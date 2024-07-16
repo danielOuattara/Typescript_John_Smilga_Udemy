@@ -16,6 +16,7 @@ function getPerson(): [string, number] {
 }
 
 let somePerson = getPerson();
+console.log(somePerson);
 console.log(somePerson[0]);
 console.log(somePerson[1]);
 
@@ -23,8 +24,10 @@ console.log(somePerson[1]);
 
 let employee: [string, number] = ["John", 25];
 console.log(employee);
+
 employee.unshift("Travolta");
 console.log(employee);
+
 employee.push(2674474467474);
 console.log(employee);
 
@@ -32,7 +35,7 @@ console.log(employee);
 
 let manager: readonly [string, number] = ["Anna", 25];
 console.log(manager);
-// manager.push("Neslon"); // X :  Property 'push' does not exist on type 'readonly [string, number]'.ts(2339)
+// manager.push("Nelson"); // X :  Property 'push' does not exist on type 'readonly [string, number]'.ts(2339)
 
 /*------ optional parameter in tuple -------*/
 

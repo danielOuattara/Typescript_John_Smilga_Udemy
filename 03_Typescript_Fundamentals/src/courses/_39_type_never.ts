@@ -3,13 +3,15 @@ export {};
 /**
  * In TypeScript, `never` is a type that represents
  * the type of values that never occur.
- * You can't assign any value to a variable of type never.
+ *
+ * You cannot assign any value to a variable of type never.
+ *
  * TypeScript will give a compile error if there are any
  * unhandled cases, helping ensure that all cases are handled.
  */
 
-/**Type 'number' is not assignable to type 'never'.ts(2322)*/
 // let someValue: never = 0; // X : incorrect
+/**Type 'number' is not assignable to type 'never'.ts(2322)*/
 
 // acceptable
 let neverValue: never;

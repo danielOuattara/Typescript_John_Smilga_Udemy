@@ -22,7 +22,7 @@ console.log(stringLength2); // 45
 
 //--------------------
 
-type Bird = {
+type TBird = {
   name: string;
 };
 
@@ -32,11 +32,11 @@ let dogJson = '{"breed": "Poodle"}';
 
 /**
  * Parse the JSON string into an object
- * We're sure that the jsonObject is actually a Bird
+ * We're sure that the jsonObject is actually a TBird
  * */
 
-let bird = JSON.parse(birdJson) as Bird;
-let dog = JSON.parse(dogJson) as Bird; // CAUTION
+let bird = JSON.parse(birdJson) as TBird;
+let dog = JSON.parse(dogJson) as TBird; // CAUTION
 
 console.log(bird.name); // Eagle
 console.log(dog.name); // undefined,
@@ -55,8 +55,12 @@ type User = {
 
 // save EnumStatus.Pending in the DB as a string
 
+const user_0: User = { name: "john", status: EnumStatus.Pending }; // ERROR
+console.log("user_0 = ", user_0);
 // retrieve string from the DB, as `string`
 const statusValue = "pending";
+
+// const user: User = { name: "john", status: statusValue }; // ERROR
 
 /**
  * Type `pending` is not assignable to type 'EnumStatus'.ts(2322)
@@ -64,8 +68,13 @@ const statusValue = "pending";
  * 'status' which is declared here on type 'User'
  */
 
-// const user: User = { name: "john", status: statusValue }; // ERROR
+// solution 1
 
-//solution
-const user2: User = { name: "john", status: statusValue as EnumStatus }; // OK now by assertion
+const user2: User = { name: "john", status: statusValue as EnumStatus.Pending }; // OK now by assertion
 console.log("user2 = ", user2);
+
+// solution 2
+
+const statusValue_2 = "pending" as EnumStatus.Pending;
+const user_2: User = { name: "john", status: statusValue_2 }; // OK
+console.log("user_2 = ", user_2);

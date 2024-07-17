@@ -4,18 +4,19 @@ export {};
  *  Type unknown
  * ---------------
  *
- * The unknown type in TypeScript is a type-safe counterpart
- * of the any type. It's like saying that a variable could be
- * anything, but we need to perform some type-checking before
- * we can use it.
+ * The `unknown` type in TypeScript is a type-safe counterpart
+ * of the `any` type.
+ *
+ * It's like saying that a variable could be anything, but we
+ * need to perform some type-checking before we can use it.
  *
  * `error instanceof Error` checks if the error object is an
- * instance  of the Error class.
+ * instance of the Error class.
  */
 
 let unknownValue: unknown;
 
-// Assign different types of values to unknownValue
+// Assign different types of values to `unknownValue`
 unknownValue = "Hello World"; // OK
 unknownValue = [1, 2, 3]; // OK
 unknownValue = 42.3344556; // OK

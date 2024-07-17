@@ -29,16 +29,35 @@ function reducer(state: number, action: Action): number {
     default: {
       const unexpectedAction: never = action;
       throw new Error(`Unexpected action: ${unexpectedAction}`);
-      return 0;
     }
   }
 }
 
-const newState = reducer(15, {
-  user: "john",
+let initialState = 15;
+
+let state = reducer(initialState, {
   type: "increment",
   amount: 5,
   timestamp: 123456,
+  user: "john",
 });
 
-console.log("newState = ", newState);
+console.log("state = ", state);
+
+state = reducer(state, {
+  type: "decrement",
+  amount: 5,
+  timestamp: 213456,
+  user: "jana",
+});
+
+console.log("state = ", state);
+
+// state = reducer(state, {
+//   type: "crazy",
+//   amount: 5,
+//   timestamp: 213456,
+//   user: "jana",
+// });
+
+// console.log("state = ", state);

@@ -1,11 +1,11 @@
 export {};
 /*------ challenge instanceof type guard ------
 
-The instanceof type guard is a way in TypeScript to 
+The `instanceof` type guard is a way in TypeScript to 
 check the specific class or constructor function of 
-an object at runtime. It returns true if the object 
+an object at runtime. It returns `true` if the object 
 is an instance of the class or created by the 
-constructor function, and false otherwise. */
+constructor function, and `false` otherwise. */
 
 try {
   throw new Error(`This is an error`);

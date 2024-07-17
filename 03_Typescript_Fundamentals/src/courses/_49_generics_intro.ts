@@ -21,3 +21,7 @@ think of generics as a kind of variable for types.
 let array1: Array<string> = ["Apple", "Banana", "Mango"];
 let array2: Array<number> = [1, 2, 3];
 let array3: Array<boolean> = [true, false, true];
+
+console.log(`array1 = ${array1}`);
+console.log(`array2 = ${array2}`);
+console.log(`array3 = ${array3}`);

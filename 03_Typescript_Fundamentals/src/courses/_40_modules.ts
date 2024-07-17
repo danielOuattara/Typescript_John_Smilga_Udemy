@@ -4,7 +4,7 @@ import newStudent, {
   type TStudent,
 } from "./_40_modules_actions";
 
-import { countryName } from "./_40_modules_javascript";
+import { countryName } from "./_40_modules_action_02.js";
 
 /*------ module ------*/
 let name = "shakeAdnBake";

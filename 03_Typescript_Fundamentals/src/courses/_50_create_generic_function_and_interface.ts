@@ -12,24 +12,35 @@ function createBoolena(arg: boolean): boolean {
   return arg;
 }
 
-// Define a generic function
+//---------------------------------------------------------
+
+// Define one generic function instead of 3 distinct functions as above
+
 function genericCreated<T>(arg: T): T {
   return arg;
 }
 
-const someStringValue = genericCreated<string>("Hello World");
-const someNumberValue = genericCreated<number>(2);
+const stringValue = genericCreated<string>("Hello World");
+console.log(`stringValue = ${stringValue}`);
+
+const numberValue = genericCreated<number>(2);
+console.log(`numberValue = ${numberValue}`);
+
+//---------------------------------------------------------
 
 // Define a generic interface
 
-interface IGenericInterface<T> {
+interface IGeneric<T> {
   value: T;
   getValue(): T;
 }
 
-const genericString: IGenericInterface<string> = {
-  value: `Hello`,
+const genericString: IGeneric<string> = {
+  value: `Hello Generics`,
   getValue() {
-    return this.value;
+    return this.value.toUpperCase();
   },
 };
+
+console.log(`genericString.value = ${genericString.value}`);
+console.log(`genericString.getValue() = ${genericString.getValue()}`);

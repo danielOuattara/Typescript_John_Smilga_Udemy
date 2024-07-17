@@ -16,10 +16,10 @@ type Person = Student | User;
 const person: Person = {
   name: "Anna",
   study() {
-    console.log(`${name} is studying`);
+    console.log(`${person.name} is studying`);
   },
   login() {
-    console.log(`${name} is logging`);
+    console.log(`${person.name} is logging`);
   },
 };
 
@@ -31,6 +31,6 @@ function isStudent(person: Person): person is Student {
 if (isStudent(person)) {
   person.study(); // This is safe because TypeScript knows that 'person' is a Student.
 } else {
-  // in this case person is type "never"
+  // in this case person is type "never" (What ??? LOL ! NO !)
   console.log(person);
 }

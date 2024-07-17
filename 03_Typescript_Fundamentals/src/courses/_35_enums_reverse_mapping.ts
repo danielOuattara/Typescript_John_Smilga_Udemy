@@ -6,7 +6,9 @@ enum EnumResponseStatus {
   Success = 200,
   Error = "Error",
 }
+
 console.log("EnumResponseStatus = ", EnumResponseStatus);
+
 Object.values(EnumResponseStatus).forEach((value) => {
   console.log(value);
 });
@@ -17,15 +19,23 @@ enum EnumResponseStatus2 {
   Success = 200,
   Error = 500,
 }
+
 console.log("EnumResponseStatus2 = ", EnumResponseStatus2);
+
+Object.values(EnumResponseStatus2).forEach((value) => {
+  console.log(value);
+});
+
+console.log("-----");
+
 Object.values(EnumResponseStatus2).forEach((value) => {
   if (typeof value === "number") {
     console.log(value);
   }
 });
-//---
 
 console.log("-------------------------");
+
 enum EnumResponseStatus3 {
   Success = "Success",
   Error = "Error",
@@ -35,9 +45,8 @@ console.log("EnumResponseStatus3 = ", EnumResponseStatus3);
 Object.values(EnumResponseStatus3).forEach((value) => {
   console.log(value);
 });
-console.log("-------------------------");
 
-//----------------------------------------------------------
+console.log("-------------------------");
 
 enum NumericEnum {
   Member = 1,
@@ -49,6 +58,7 @@ enum StringEnum {
 
 let numericValue1: NumericEnum = NumericEnum.Member; // OK
 console.log(numericValue1); // 1
+
 let numericValue2: NumericEnum = 1; // OK
 console.log(numericValue2); // 1
 
@@ -57,8 +67,8 @@ console.log(stringValue1);
 
 // let stringEnumValue: StringEnum = "Value"; // This is not allowed
 
-//----------------------------
 console.log("-------------------------");
+
 interface IServerResponse {
   result: EnumResponseStatus;
   data: string[];

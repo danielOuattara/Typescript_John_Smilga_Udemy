@@ -5,24 +5,24 @@ A type predicate is a function whose return type is
 a special kind of type that can be used to narrow 
 down types within conditional blocks. */
 
-type Student = {
+type TStudent = {
   name: string;
   study: () => void;
 };
 
-type User = {
+type TUser = {
   name: string;
   login: () => void;
 };
 
-type Person = Student | User;
+type TPerson = TStudent | TUser;
 
 //-----------------------
 
-const randomPerson = (): Person => {
+const randomPerson = (): TPerson => {
   return Math.random() > 0.5
     ? { name: "John Doe", study: () => console.log(`student is studying`) }
-    : { name: "John Doe", login: () => console.log(`user is studying`) };
+    : { name: "John Doe", login: () => console.log(`user is logging`) };
 };
 
 const person = randomPerson();
@@ -33,10 +33,10 @@ console.log(person);
 
 /* `isStudent` returns a predicate */
 
-function isStudent(person: Person): person is Student {
-  //   return "study" in person;
+function isStudent(person: TPerson): person is TStudent {
+  return "study" in person;
   // OR
-  return (person as Student).study !== undefined;
+  // return (person as TStudent).study !== undefined;
 }
 
 if (isStudent(person)) {
@@ -47,13 +47,13 @@ if (isStudent(person)) {
 
 //-------------
 
-const john: Student = {
+const john: TStudent = {
   name: "John Doe",
   study() {
     console.log(`${this.name} is studying`);
   },
 };
-const marie: User = {
+const marie: TUser = {
   name: "Marie Stuart",
   login() {
     console.log(`${this.name} is logging`);

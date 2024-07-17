@@ -2,7 +2,7 @@ export {};
 /*------ generic default types ------*/
 
 /**
- * Initially StoredData accept string type by `default`.
+ * Initially StoredData accept `string` type by `default` on definition.
  * And on usage, it can accept over type.
  */
 

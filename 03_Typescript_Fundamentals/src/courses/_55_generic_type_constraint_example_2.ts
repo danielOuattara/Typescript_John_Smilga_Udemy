@@ -7,8 +7,8 @@ type Car = {
 };
 
 const car: Car = {
-  brand: "ford",
-  model: "mustang",
+  brand: "Ford",
+  model: "Mustang",
 };
 
 //---------------------
@@ -31,30 +31,31 @@ type Student = {
 };
 
 const student: Student = {
-  name: "peter",
+  name: "Peter",
   age: 20,
 };
 
-//-----------------------------------------------
+//---------------------------------------------------------------------------
 
 /**
  * Property 'name' does not surely exist on type 'T' ,
  * all depends on `T` itself
  * */
+
 function printName1<T>(input: T): void {
   console.log(`No constraint on generic "T" `, input);
-  //   console.log(input.name);
+  // console.log(input.name);
 }
-
-//------------
 
 printName1(student);
 printName1(product);
 printName1(car);
 
+//-----------------------------------------------------------------------------
+
 /**
  * `T extends Student` is a type constraint on the generic type `T`.
- * It means that the type `T` can be any type, but it must be a
+ * It means that the type `T` cannot be any type: it must be a
  * subtype of `Student` or `Student` itself.
  *
  * In other words, `T` must have at least the same properties
@@ -64,13 +65,23 @@ function printName2<T extends Student>(input: T): void {
   console.log(input.name);
 }
 
-//------------
-
 printName2(student);
+
+// student_2 extends type Student, anonymously
+const student_2 = {
+  name: "Mike",
+  age: 20,
+  state: "California",
+};
+
+printName2(student_2); // OK
+
+// `product` and `car` do not extends `Student` type
+
 // printName2(product); // Incorrect
 // printName2(car); // Incorrect
 
-//------------
+//-------------------------------------------------------------------------
 
 function printName3<T extends Student | Product>(input: T): void {
   console.log(input.name);
@@ -80,7 +91,7 @@ printName3(student);
 printName3(product);
 // printName3(car); // Incorrect
 
-//-------------
+//--------------------------------------------------------------------------
 
 /**
  * printName4() BETTER SOLUTION THAN printName3(): more specific !

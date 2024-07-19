@@ -225,3 +225,48 @@ main h2 {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-1);
 }
+
+/* ---------- */
+
+.task-label {
+  width: 80%;
+}
+
+.delete-task-btn {
+  display: inline-block;
+  padding: 0.35rem 0.5rem;
+  background-color: rgb(255, 138, 138);
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.delete-task-btn:hover {
+  display: inline-block;
+  padding: 0.35rem 0.5rem;
+  background-color: red;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.task-completed {
+  text-decoration-line: line-through;
+  text-decoration-color: green;
+  color: grey;
+}
+
+/* .task-completed {
+  position: relative;
+  display: inline-block;
+  color: grey;
+} */
+
+/* .task-completed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background-color: red;
+  transform: translateY(-50%);
+} */

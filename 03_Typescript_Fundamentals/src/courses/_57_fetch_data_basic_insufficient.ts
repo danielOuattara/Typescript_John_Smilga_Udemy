@@ -1,5 +1,5 @@
 export {};
-/*------ fetch data basics: insufficient way ------
+/*------ fetch data basics: insufficient type ------
 
 - typically axios OR React Query OR both
 - we won't set any state values

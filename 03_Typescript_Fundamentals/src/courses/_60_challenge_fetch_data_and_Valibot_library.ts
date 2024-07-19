@@ -1,8 +1,8 @@
 export {};
 
-/*------ challenge fetch data and Valibot library------
+/*------ challenge: fetching data and use Valibot library------
 
-Helps on types, also on runtime
+Helps on types, also on `runtime`
 
 */
 
@@ -17,6 +17,7 @@ const tourSchema = object({
   image: string(),
   price: string(),
   //...etc
+  country: string(), // for testing !
 });
 
 // extract the inferred type

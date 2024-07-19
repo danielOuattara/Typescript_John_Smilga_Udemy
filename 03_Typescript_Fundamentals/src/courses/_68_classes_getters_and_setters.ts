@@ -9,8 +9,8 @@ class Book {
     return `${this.title} by ${this.author}`;
   }
 
-  set checkedOut(checkedOut: boolean) {
-    this._checkedOut = checkedOut;
+  set checkedOut(arg: boolean) {
+    this._checkedOut = arg;
   }
 
   get checkedOut() {

@@ -1,5 +1,5 @@
 export {};
-/*------ challenge fetch data typescript perfect ------
+/*------ challenge fetch data: type specified correctly ------
 
 setup type and provide correct return type 
 
@@ -20,9 +20,7 @@ async function fetchData(url: string): Promise<ITour[]> {
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error(`HTTP error! status: 
-      ${res.status} 
-      ${res.statusText}`);
+      throw new Error(`HTTP error! status: ${res.status} ${res.statusText}`);
     }
 
     const data: ITour[] = await res.json();

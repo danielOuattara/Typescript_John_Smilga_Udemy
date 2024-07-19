@@ -2,6 +2,7 @@ export {};
 /*------ classes private public access modifiers ------*/
 
 // public = default `access modifier`
+
 class Book {
   readonly title: string; // public
   public author: string; // public

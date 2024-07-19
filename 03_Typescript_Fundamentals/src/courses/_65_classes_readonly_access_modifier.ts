@@ -16,3 +16,6 @@ const butterfly = new Book("Butterfly", "John Doe");
 console.log(butterfly); // { title: "Butterfly", author: "John Doe" }
 
 console.log(butterfly.title); // Butterfly
+
+// butterfly.title = "New title"; // X Incorrect
+// Cannot assign to 'title' because it is a read-only property.ts(2540)

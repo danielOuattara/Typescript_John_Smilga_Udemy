@@ -1,7 +1,7 @@
 export {};
-/*------ challenge fetch data and Zod library------
+/*------ challenge: fetching data and use Zod library------
 
-Helps on types, also on runtime
+Helps on types, also on `runtime`
 
 */
 
@@ -16,6 +16,7 @@ const tourSchema = z.object({
   image: z.string(),
   price: z.string(),
   //...etc
+  // country: z.string(), // for testing !
 });
 
 // extract the inferred type

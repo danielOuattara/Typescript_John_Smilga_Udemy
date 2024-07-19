@@ -58,7 +58,7 @@ import { setupCounter } from "./counter.ts";
 // import "./courses/_54_generics_inferred_type_and_type_constraints.ts";
 // import "./courses/_55_generic_type_constraint_example_2.ts";
 // import "./courses/_56_generic_default_types.ts";
-import "./courses/_57_fetch_data_basic_insufficient.ts";
+// import "./courses/_57_fetch_data_basic_insufficient.ts";
 // import "./courses/_58_challenge_fetch_data_typescript_perfect.ts";
 // import "./courses/_59_challenge_fetch_data_and_Zod_library.ts";
 // import "./courses/_60_challenge_fetch_data_and_Valibot_library.ts";
@@ -73,12 +73,13 @@ import "./courses/_57_fetch_data_basic_insufficient.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
-    <a href="./tasks">TASKS PAGE</a>
-    <a href="tasks">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+    <a href="tasks-v1">
+      Tasks version 1
     </a>
-    <a href="tasks">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
+
+    &nbsp; &nbsp;
+    <a href="tasks-v2">
+      Tasks version 2
     </a>
     <h1>Vite + TypeScript</h1>
     <div class="card">

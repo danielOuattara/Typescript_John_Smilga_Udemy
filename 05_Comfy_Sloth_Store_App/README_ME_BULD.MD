@@ -27,9 +27,16 @@ export default App;
 
 ## Install Libraries
 
+- old :
+
 ```sh
 npm install @reduxjs/toolkit@^2.1.0 axios@^1.6.7 react-redux@^9.1.0 react-router-dom@^6.21.3
+```
 
+- new :
+
+```sh
+npm install @reduxjs/toolkit axios react-redux react-router-dom
 ```
 
 ## Tailwind CSS
@@ -1165,7 +1172,7 @@ export const formatAsDollars = (price: string | number): string => {
 
 ## Card Component - Shadcn
 
-[Card ](https://ui.shadcn.com/docs/components/card)
+[Card](https://ui.shadcn.com/docs/components/card)
 
 ```sh
 npx shadcn-ui@latest add card
@@ -1577,7 +1584,7 @@ new URL(request.url) creates a new URL object from the URL in the request.
 ... is the spread operator, which expands the entries into individual elements.
 Object.fromEntries([...]) converts these entries back into an object, where each key-value pair becomes a property in the object.
 
-So, if your URL is http://example.com?param1=value1&param2=value2, the resulting params object would be { param1: 'value1', param2: 'value2' }.
+So, if your URL is <http://example.com?param1=value1&param2=value2>, the resulting params object would be { param1: 'value1', param2: 'value2' }.
 
 ## Setup Params Type
 

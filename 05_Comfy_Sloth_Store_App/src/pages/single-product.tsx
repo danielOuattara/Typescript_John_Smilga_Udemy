@@ -1,3 +1,3 @@
-export default function Single-product() { 
-  return <h1 className="text-4xl">Single-product Page</h1>; 
+export default function SingleProduct() {
+  return <h1 className="text-4xl">Single-product Page</h1>;
 }

@@ -2,7 +2,7 @@ mkdir -p src/features/cart src/features/theme src/features/user && touch src/fea
 
 
 mkdir -p src/pages && \
-touch src/pages/{about,cart,checkout,error,homeLayout,landing,login,orders,products,register,single-product,index}.tsx && \
+touch src/pages/{about,cart,checkout,error,home,landing,login,orders,products,register,single-product,index}.tsx && \
 for file in src/pages/*.tsx; do \
   base_name=$(basename "$file" .tsx); \
   capitalized_name=$(echo "$base_name" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}'); \
@@ -13,7 +13,7 @@ done
  
 # Note: correct index.tsx as follow 
 
-echo 'export { default as HomeLayout } from "./homeLayout";
+echo 'export { default as HomeLayout } from "./home";
 export { default as Landing } from "./landing";
 export { default as SingleProduct } from "./single-product";
 export { default as Products } from "./products";

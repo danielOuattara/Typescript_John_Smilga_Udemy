@@ -1,20 +1,11 @@
-import { Button } from "@/components/ui/button";
-import { useAppSelector } from "./hook";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import * as pages from "./pages";
+
+const router = createBrowserRouter([
+  { path: "/", element: <pages.Landing /> },
+  { path: "/cart", element: <pages.Cart /> },
+]);
 
 export default function App() {
-  const { name } = useAppSelector((state) => state.user);
-  console.log(name);
-  return (
-    <div>
-      <h1 className="text-3xl font-bold">Comfy Store</h1>
-      <Button
-        variant="destructive"
-        size="lg"
-        onClick={() => console.log("it worked!!!")}
-        className="m-5"
-      >
-        Click Me
-      </Button>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }

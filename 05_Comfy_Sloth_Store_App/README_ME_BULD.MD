@@ -331,7 +331,7 @@ function App() {
   - index.ts
 
 ```bash
-# automatically create all the pages + initial content + update index.tsx
+# automatically create all the page + initial content + update index.tsx
 
 mkdir -p src/pages && \
 touch src/pages/{about,cart,checkout,error,homeLayout,landing,login,orders,products,register,single-product,index}.tsx && \

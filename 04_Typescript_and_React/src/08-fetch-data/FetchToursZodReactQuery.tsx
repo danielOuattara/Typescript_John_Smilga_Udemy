@@ -17,6 +17,7 @@ export default function FetchToursZodReactQuery({ url }: { url: string }) {
   if (isPending) {
     return <h2>Loading...</h2>;
   }
+
   if (isError) {
     return <h2>Error {error.message}</h2>;
   }

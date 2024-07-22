@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useAppSelector } from "./hook";
 
 export default function App() {
+  const { name } = useAppSelector((state) => state.user);
+  console.log(name);
   return (
     <div>
       <h1 className="text-3xl font-bold">Comfy Store</h1>

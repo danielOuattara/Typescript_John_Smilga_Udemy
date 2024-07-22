@@ -19,16 +19,12 @@
 
 import { PropsWithChildren } from "react";
 
-type TypeComponentProps = {
+type TypeComponentProps = PropsWithChildren<{
   name: string;
   id?: number;
-};
+}>;
 
-function Component({
-  name,
-  id,
-  children,
-}: PropsWithChildren<TypeComponentProps>) {
+function Component({ name, id, children }: TypeComponentProps) {
   return (
     <div>
       <h2>{name}</h2>
@@ -41,7 +37,10 @@ export default Component;
 
 //------------------------
 
+/* Below: how to use in App.tsx */
+
 /* 
+
 import Component from "./02-props";
 
 export default function App() {

@@ -61,7 +61,7 @@ export default {
 };
 ```
 
-index.css
+`index.css`
 
 ```css
 @tailwind base;
@@ -86,7 +86,33 @@ export default App;
 
 [Shadcn and Vite](https://ui.shadcn.com/docs/installation/vite)
 
-tsconfig.json
+- Edit `tsconfig.json` file
+
+The current version of Vite splits TypeScript configuration into three files, two of which need to be edited. Add the baseUrl and paths properties to the compilerOptions section of the tsconfig.json and tsconfig.app.json files:
+
+```json
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+- Edit `tsconfig.app.json` file
+
+Add the following code to the tsconfig.app.json file to resolve paths, for your IDE:
 
 ```json
 {
@@ -94,41 +120,65 @@ tsconfig.json
     // ...
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
     // ...
   }
 }
 ```
 
+- Update `vite.config.ts`
+
 ```sh
 npm i -D @types/node
 ```
 
-vite.config.ts
+Add the following code to the vite.config.ts so your app can resolve paths without error
 
 ```ts
-import path from 'path';
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-
+import path from "path"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
+ 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+})
 ```
+
+- Run the CLI
+Run the `shadcn-ui` init command to setup your project:
 
 ```sh
 npx shadcn-ui@latest init
 ```
 
+- Configure `components.json`
+  
+You will be asked a few questions to configure components.json:
+
+```bash
+Would you like to use TypeScript (recommended)? no / yes
+Which style would you like to use? › Default
+Which color would you like to use as base color? › Slate
+Where is your global CSS file? › › src/index.css
+Do you want to use CSS variables for colors? › no / yes
+Where is your tailwind.config.js located? › tailwind.config.js
+Configure the import alias for components: › @/components
+Configure the import alias for utils: › @/lib/utils
+Are you using React Server Components? › no / yes (no)
+```
+
+- test shadcn/ui
+
 ```sh
 npx shadcn-ui@latest add button
-
 ```
 
 - restart server

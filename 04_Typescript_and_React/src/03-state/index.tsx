@@ -36,8 +36,9 @@ function Component() {
 }
 export default Component;
 
-/* 
+/* Below: how to use in App.tsx */
 
+/* 
 import Component from "./03-state";
 
 export default function App() {

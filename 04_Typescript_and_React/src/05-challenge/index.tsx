@@ -30,8 +30,9 @@ function Component({ type, name, email }: TypeProfileCardProps) {
 }
 export default Component;
 
-/* 
+/* Below: how to use in App.tsx */
 
+/* 
 import Component from "./05-challenge";
 
 export default function App() {

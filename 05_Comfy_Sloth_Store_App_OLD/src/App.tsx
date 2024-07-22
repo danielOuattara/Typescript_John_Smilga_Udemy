@@ -5,6 +5,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Page.HomeLayout />,
+    errorElement: <Page.Error />,
     children: [
       { index: true, element: <Page.Landing /> },
       { path: "/products", element: <Page.Products /> },
@@ -15,8 +16,16 @@ const router = createBrowserRouter([
       { path: "/orders", element: <Page.Orders /> },
     ],
   },
-  { path: "/login", element: <Page.Login /> },
-  { path: "/register", element: <Page.Register /> },
+  {
+    path: "/login",
+    element: <Page.Login />,
+    errorElement: <Page.Error />,
+  },
+  {
+    path: "/register",
+    element: <Page.Register />,
+    errorElement: <Page.Error />,
+  },
 ]);
 
 export default function App() {

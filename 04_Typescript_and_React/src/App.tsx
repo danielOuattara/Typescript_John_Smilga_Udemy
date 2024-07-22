@@ -7,7 +7,9 @@
 // import Component from "./07-reducers";
 // import Component from "./08-fetch-data";
 // import Component from "./09-rtk";
-import Component from "./10-tasks-projects";
+// import Component from "./10-tasks-projects";
+import Component from "./10-tasks-projects-v2";
+import "./10-tasks-projects-v2/tasks.css";
 
 export default function App() {
   return (

@@ -8,7 +8,7 @@ export default function Component() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     setEmail(e.target.value);
   };
@@ -19,10 +19,11 @@ export default function Component() {
     // const formData = new FormData(e.target as HTMLFormElement )
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    const name = formData.get("name") as string;
 
+    const name = formData.get("name") as string;
     const person: TypePerson = { name: name };
     console.log(person);
+
     const person_2: TypePerson = { name: data.name as string };
     console.log(person_2);
   };
@@ -43,7 +44,7 @@ export default function Component() {
           name="email"
           value={email}
           className="form-input mb-1"
-          onChange={handleChange}
+          onChange={handleEmailChange}
         />
         <button
           type="submit"
@@ -63,16 +64,16 @@ export function Component_2() {
     console.log("Component_2");
 
     const formData = new FormData(e.currentTarget);
-    const data: { [key: string]: any } = {};
+    const data: { [key: string]: unknown } = {};
     formData.forEach((value, key) => {
       data[key] = value as string;
     });
 
     const name = formData.get("name") as string;
-
     const person: TypePerson = { name };
     console.log(person);
-    const person_2: TypePerson = { name: data.name };
+
+    const person_2: TypePerson = { name: data.name as string };
     console.log(person_2);
 
     e.currentTarget.reset();
@@ -92,8 +93,9 @@ export function Component_2() {
   );
 }
 
-/* 
+/* Below: how to use in App.tsx */
 
+/* 
 import Component, { Component_2 } from "./04-events";
 
 export default function App() {

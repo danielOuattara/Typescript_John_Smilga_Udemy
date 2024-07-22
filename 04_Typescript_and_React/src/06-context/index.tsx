@@ -32,8 +32,9 @@ export function Component() {
   );
 }
 
-/* 
+/* Below: how to use in App.tsx */
 
+/* 
 import Component from "./06-context";
 
 export default function App() {

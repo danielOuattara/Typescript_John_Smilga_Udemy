@@ -24,3 +24,23 @@ export { default as Login } from "./login";
 export { default as Register } from "./register";
 export { default as Checkout } from "./checkout";
 export { default as Orders } from "./orders";' > src/pages/index.tsx
+
+
+# create components: Navbar, Logo, LinksDropdown, NavLinks, ModeToggle, CartButton
+
+touch src/components/{Navbar,Logo,LinksDropdown,NavLinks,ModeToggle,CartButton}.tsx && 
+for file in src/components/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
+  return <h2 className=\"text-4xl\">$(basename "$file" .tsx)</h2>;
+}" > "$file"; done
+
+# update src/components/index.tsx
+
+echo '
+export {default as Header} from "./Header";
+export {default as Navbar} from "./Navbar";
+export {default as Logo} from "./Logo";
+export {default as LinksDropdown} from "./LinksDropdown";
+export {default as NavLinks} from "./NavLinks";
+export {default as ModeToggle} from "./ModeToggle";
+export {default as CartButton} from "./CartButton";
+' > src/components/index.tsx

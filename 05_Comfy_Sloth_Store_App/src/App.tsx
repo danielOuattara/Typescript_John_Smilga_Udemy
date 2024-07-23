@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import * as pages from "./pages";
 import { ErrorElement } from "./components";
+import { landingLoader } from "./utilities";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,10 +13,11 @@ const router = createBrowserRouter([
         index: true,
         element: <pages.Landing />,
         errorElement: <ErrorElement />,
-        loader: () => {
-          console.log("landing from loader");
-          return null;
-        },
+        // loader: () => {
+        //   console.log("landing from loader");
+        //   return null;
+        // },
+        loader: landingLoader,
       },
       {
         path: "/products",

@@ -44,3 +44,13 @@ export {default as NavLinks} from "./NavLinks";
 export {default as ModeToggle} from "./ModeToggle";
 export {default as CartButton} from "./CartButton";
 ' > src/components/index.tsx
+
+
+:'  
+Hero,HeroCarousel,FeaturedProducts,SectionTitle,ProductsGrid
+'
+
+mkdir  -p src/components && touch src/components/{Hero,HeroCarousel,FeaturedProducts,SectionTitle,ProductsGrid}.tsx && 
+for file in src/components/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
+  return <h2 className=\"text-4xl\">$(basename "$file" .tsx)</h2>;
+}" > "$file"; done

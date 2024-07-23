@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import * as pages from "./pages";
-
+import { ErrorElement } from "./components";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -8,12 +8,32 @@ const router = createBrowserRouter([
     errorElement: <pages.Error />,
     children: [
       { index: true, element: <pages.Landing /> },
-      { path: "/products", element: <pages.Products /> },
-      { path: "/products/:productId", element: <pages.SingleProduct /> },
+      {
+        path: "/products",
+        element: <pages.Products />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: "/products/:productId",
+        element: <pages.SingleProduct />,
+        errorElement: <ErrorElement />,
+      },
       { path: "/cart", element: <pages.Cart /> },
-      { path: "/about", element: <pages.About /> },
-      { path: "/checkout", element: <pages.Checkout /> },
-      { path: "/orders", element: <pages.Orders /> },
+      {
+        path: "/about",
+        element: <pages.About />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: "/checkout",
+        element: <pages.Checkout />,
+        errorElement: <ErrorElement />,
+      },
+      {
+        path: "/orders",
+        element: <pages.Orders />,
+        errorElement: <ErrorElement />,
+      },
     ],
   },
   {

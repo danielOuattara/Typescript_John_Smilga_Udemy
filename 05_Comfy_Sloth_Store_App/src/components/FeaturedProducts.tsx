@@ -1,3 +1,10 @@
+import { ProductsGrid, SectionTitle } from "./index";
+
 export default function FeaturedProducts() {
-  return <h2 className="text-4xl">FeaturedProducts</h2>;
+  return (
+    <section className="pt-24 ">
+      <SectionTitle text="featured products" />
+      <ProductsGrid />
+    </section>
+  );
 }

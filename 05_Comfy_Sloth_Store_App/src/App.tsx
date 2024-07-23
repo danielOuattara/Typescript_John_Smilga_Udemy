@@ -7,7 +7,15 @@ const router = createBrowserRouter([
     element: <pages.HomeLayout />,
     errorElement: <pages.Error />,
     children: [
-      { index: true, element: <pages.Landing /> },
+      {
+        index: true,
+        element: <pages.Landing />,
+        errorElement: <ErrorElement />,
+        loader: () => {
+          console.log("landing from loader");
+          return null;
+        },
+      },
       {
         path: "/products",
         element: <pages.Products />,

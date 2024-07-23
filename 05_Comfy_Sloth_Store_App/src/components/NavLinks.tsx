@@ -1,3 +1,20 @@
+import { links } from "@/utilities";
+import { NavLink } from "react-router-dom";
+
 export default function NavLinks() {
-  return <h2 className="text-4xl">NavLinks</h2>;
+  return (
+    <div className="hidden lg:flex justify-center items-center gap-x-4">
+      {links.map((link) => (
+        <NavLink
+          key={link.label}
+          to={link.href}
+          className={({ isActive }) =>
+            `capitalize tracking-wide ${isActive ? "text-primary" : ""}`
+          }
+        >
+          {link.label}
+        </NavLink>
+      ))}
+    </div>
+  );
 }

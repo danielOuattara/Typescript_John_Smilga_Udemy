@@ -9,7 +9,9 @@ export default function NavLinks() {
           key={link.label}
           to={link.href}
           className={({ isActive }) =>
-            `capitalize tracking-wide ${isActive ? "text-primary" : ""}`
+            `capitalize font-light tracking-wide ${
+              isActive ? "text-primary" : ""
+            }`
           }
         >
           {link.label}

@@ -1,5 +1,5 @@
 import { customFetch } from "@/utilities";
-import { LoaderFunction } from "react-router-dom";
+import { type LoaderFunction } from "react-router-dom";
 
 export const landingLoader: LoaderFunction =
   async (): Promise<ProductsResponse> => {

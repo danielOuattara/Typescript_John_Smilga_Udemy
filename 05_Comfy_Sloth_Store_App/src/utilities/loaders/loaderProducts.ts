@@ -7,11 +7,21 @@ export const loaderFeaturedProducts: LoaderFunction =
     return { ...res.data };
   };
 
-export const loaderAllProducts: LoaderFunction =
-  async (/*{ params, request,context}*/): Promise<ProductsResponse> => {
-    // console.log("params = ", params);
-    // console.log("request = ", request);
-    // console.log("context = ", context);
-    const res = await customFetch<ProductsResponse>("/products");
-    return { ...res.data };
-  };
+export const loaderAllProducts: LoaderFunction = async ({
+  // params,
+  request,
+  // context,
+}): Promise<ProductsResponse> => {
+  // console.log("params = ", params);
+  // console.log("request = ", request);
+  // console.log("context = ", context);
+  //
+  const { searchParams } = new URL(request.url);
+  const searchObject = Object.fromEntries(searchParams.entries());
+
+  const res = await customFetch<ProductsResponse>("/products", {
+    // params: { search: "chair", price: 25999 },
+    params: { ...searchObject },
+  });
+  return { ...res.data };
+};

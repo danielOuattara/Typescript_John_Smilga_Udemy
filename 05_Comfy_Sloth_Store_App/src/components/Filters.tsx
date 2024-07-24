@@ -1,6 +1,6 @@
 import { Form, Link, useLoaderData } from "react-router-dom";
 import { Button } from "./ui/button";
-import { FormInput, FormRange, FormSelect } from "@/components";
+import { FormCheckbox, FormInput, FormRange, FormSelect } from "@/components";
 
 export default function Filters() {
   const { searchParamsObject, meta } =
@@ -42,6 +42,13 @@ export default function Filters() {
         label="price"
         name="price"
         defaultValue={searchParamsObject.price}
+      />
+
+      {/* SHIPPING */}
+      <FormCheckbox
+        label="free shipping"
+        name="shipping"
+        defaultValue={searchParamsObject.shipping}
       />
 
       <Button type="submit" size="sm" className="self-end mb-2">

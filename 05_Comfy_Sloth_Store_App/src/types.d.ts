@@ -78,3 +78,9 @@ type FormRangeProps = {
   label?: string;
   defaultValue?: string;
 };
+
+type FormCheckboxProps = {
+  name: string;
+  label?: string;
+  defaultValue?: string;
+};

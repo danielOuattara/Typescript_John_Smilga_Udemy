@@ -16,3 +16,4 @@ export { default as ProductsGrid } from "./ProductsGrid";
 export { default as ProductsList } from "./ProductsList";
 export { default as SectionTitle } from "./SectionTitle";
 export { default as Loading } from "./Loading";
+export { default as FormInput } from "./FormInput";

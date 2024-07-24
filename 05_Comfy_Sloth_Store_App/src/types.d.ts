@@ -58,3 +58,10 @@ type Pagination = {
   pageSize: number;
   total: number;
 };
+
+type FormInputProps = {
+  name: string;
+  type: string;
+  label?: string;
+  defaultValue?: string;
+};

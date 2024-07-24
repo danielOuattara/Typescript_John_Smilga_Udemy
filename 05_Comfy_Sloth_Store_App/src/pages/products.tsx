@@ -1,3 +1,11 @@
-export default function Products() { 
-  return <h1 className="text-4xl">Products Page</h1>; 
+import { Filters, ProductsContainer, PaginationContainer } from "@/components";
+
+export default function Products() {
+  return (
+    <>
+      <Filters />
+      <ProductsContainer />
+      <PaginationContainer />
+    </>
+  );
 }

@@ -1,5 +1,5 @@
 export * from "./links";
 export * from "./customFetch";
 export * from "./themeApplier";
-export * from "./loaders/landingLoader";
+export * from "./loaders/loaderProducts";
 export * from "./formatMoney";

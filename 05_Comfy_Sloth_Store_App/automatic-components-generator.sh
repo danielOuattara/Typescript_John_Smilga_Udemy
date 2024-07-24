@@ -54,3 +54,14 @@ mkdir  -p src/components && touch src/components/{Hero,HeroCarousel,FeaturedProd
 for file in src/components/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
   return <h2 className=\"text-4xl\">$(basename "$file" .tsx)</h2>;
 }" > "$file"; done
+
+
+mkdir  -p src/components && touch src/components/{Filters,ProductsContainer,PaginationContainer,ProductsList}.tsx && 
+for file in src/components/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
+  return <h2 className=\"text-4xl\">$(basename "$file" .tsx)</h2>;
+}" > "$file"; done
+
+  - Filters
+  - ProductsContainer
+  - PaginationContainer
+  - ProductsList

@@ -1,10 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
 import { formatMoney } from "@/utilities";
-import { Card, CardContent } from "./ui/card";
 
 export default function ProductsList() {
   const { data: products } = useLoaderData() as ProductsResponse;
-
   return (
     <div className="mt-12 grid gap-y-8">
       {products.map((product) => (

@@ -7,7 +7,7 @@ export default function ProductsGrid() {
   return (
     <div className="pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
       {products.map((product) => (
-        <Link to={`/products/${product.id}`} key={product.id}>
+        <Link key={product.id} to={`/products/${product.id}`}>
           <Card>
             <CardContent className="p-4">
               <img

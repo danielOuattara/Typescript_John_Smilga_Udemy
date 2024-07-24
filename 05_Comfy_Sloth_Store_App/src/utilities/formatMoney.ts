@@ -6,5 +6,3 @@ export const formatMoney = (price: string | number): string => {
 
   return eurosAmount;
 };
-
-console.log("how much ? : ", formatMoney("17888"));

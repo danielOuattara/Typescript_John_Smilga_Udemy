@@ -84,3 +84,17 @@ type FormCheckboxProps = {
   label?: string;
   defaultValue?: string;
 };
+
+// pagination
+type ConstructUrlParams = {
+  pageNumber: number;
+  search: string;
+  pathname: string;
+};
+
+type ConstructPrevOrNextParams = {
+  currentPage: number;
+  pageCount: number;
+  search: string;
+  pathname: string;
+};

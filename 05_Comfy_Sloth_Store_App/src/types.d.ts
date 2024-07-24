@@ -14,6 +14,20 @@ type ProductsResponse = {
   meta: ProductsMeta;
 };
 
+type SearchParamsObject = {
+  search?: string;
+  category?: string;
+  company?: string;
+  order?: string;
+  price?: string;
+  shipping?: string;
+  page?: number;
+};
+
+type ProductsResponseWithSearchParams = ProductsResponse & {
+  searchParamsObject: SearchParamsObject;
+};
+
 type Product = {
   id: number;
   attributes: {

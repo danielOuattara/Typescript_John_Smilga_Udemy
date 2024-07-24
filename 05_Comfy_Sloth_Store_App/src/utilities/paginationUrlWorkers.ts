@@ -6,13 +6,13 @@ export const constructUrl = ({
   return `/products`;
 };
 
-export const constructPrevOrNextUrl = ({
+export const constructPreviousOrNextUrl = ({
   currentPage,
   pageCount,
   search,
   pathname,
-}: ConstructPrevOrNextParams): { prevUrl: string; nextUrl: string } => {
-  const prevUrl = "/products";
+}: ConstructPrevOrNextParams): { previousUrl: string; nextUrl: string } => {
+  const previousUrl = "/products";
   const nextUrl = "/products";
-  return { prevUrl, nextUrl };
+  return { previousUrl, nextUrl };
 };

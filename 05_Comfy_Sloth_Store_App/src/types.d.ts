@@ -65,3 +65,10 @@ type FormInputProps = {
   label?: string;
   defaultValue?: string;
 };
+
+type SelectInputProps = {
+  name: string;
+  label?: string;
+  defaultValue?: string;
+  options: string[];
+};

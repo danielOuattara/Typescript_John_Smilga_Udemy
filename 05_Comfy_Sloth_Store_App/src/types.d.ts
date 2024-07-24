@@ -72,3 +72,9 @@ type SelectInputProps = {
   defaultValue?: string;
   options: string[];
 };
+
+type FormRangeProps = {
+  name: string;
+  label?: string;
+  defaultValue?: string;
+};

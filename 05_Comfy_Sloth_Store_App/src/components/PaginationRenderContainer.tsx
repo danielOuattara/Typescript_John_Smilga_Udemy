@@ -9,7 +9,7 @@ import {
 import { constructUrl, constructPreviousOrNextUrl } from "@/utilities";
 import { useLoaderData, useLocation } from "react-router-dom";
 
-export default function PaginationContainer() {
+export default function PaginationRenderContainer() {
   const { search, pathname } = useLocation();
   const { meta } = useLoaderData() as ProductsResponseWithSearchParams;
   const { pageCount, page } = meta.pagination;
@@ -21,7 +21,7 @@ export default function PaginationContainer() {
     (_, index) => index + 1,
   );
 
-  const renderPagination = pageNumberList.map((pageNumber) => {
+  const renderPageNumberListItem = pageNumberList.map((pageNumber) => {
     const isActive = pageNumber === page;
     const url = constructUrl({ pageNumber, search, pathname });
 
@@ -41,15 +41,21 @@ export default function PaginationContainer() {
     pathname,
   });
 
+  if (pageCount < 2) {
+    return (
+      <Pagination className="mt-16">
+        <PaginationContent>{renderPageNumberListItem}</PaginationContent>
+      </Pagination>
+    );
+  }
+
   return (
     <Pagination className="mt-16">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious to={previousUrl} />
         </PaginationItem>
-
-        {renderPagination}
-
+        {renderPageNumberListItem}
         <PaginationItem>
           <PaginationNext to={nextUrl} />
         </PaginationItem>

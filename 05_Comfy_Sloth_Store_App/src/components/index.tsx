@@ -15,7 +15,7 @@ export { default as Logo } from "./Logo";
 export { default as ModeToggle } from "./ModeToggle";
 export { default as Navbar } from "./Navbar";
 export { default as NavLinks } from "./NavLinks";
-export { default as PaginationContainer } from "./PaginationContainer";
+export { default as PaginationRenderContainer } from "./PaginationRenderContainer";
 export { default as ProductsContainer } from "./ProductsContainer";
 export { default as ProductsGrid } from "./ProductsGrid";
 export { default as ProductsList } from "./ProductsList";

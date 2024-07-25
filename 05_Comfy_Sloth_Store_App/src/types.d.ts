@@ -101,13 +101,13 @@ type ConstructPreviousOrNextParams = {
 
 // single product
 
-type SingleProductResponse = {
-  data: Product;
-  meta: Record<string, never>;
-};
+// type SingleProductResponse = {
+//   data: Product;
+//   meta: Record<string, never>;
+// };
 
-type SelectProductColorProps = {
-  colors: string[];
-  productColor: string;
-  setProductColor: React.Dispatch<React.SetStateAction<string>>;
-};
+// type SelectProductColorProps = {
+//   colors: string[];
+//   productColor: string;
+//   setProductColor: React.Dispatch<React.SetStateAction<string>>;
+// };

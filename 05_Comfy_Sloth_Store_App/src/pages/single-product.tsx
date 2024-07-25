@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SelectProductColor, SelectProductQuantity } from "@/components";
 import { formatMoney } from "@/utilities";
+import { EnumLocation, SingleProductResponse } from "@/types.single-product";
 
 export default function SingleProduct() {
   const { data: product } = useLoaderData() as SingleProductResponse;
@@ -53,7 +54,12 @@ export default function SingleProduct() {
             setProductColor={setProductColor}
           />
 
-          {/* AMOUNT */}
+          {/* QUANTITY */}
+          <SelectProductQuantity
+            location={EnumLocation.IN_PRODUCT_PAGE}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
 
           {/* CART BUTTON */}
           <Button size="lg" className="mt-10" onClick={addToCart}>

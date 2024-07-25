@@ -33,6 +33,8 @@ export const loaderSingleProduct: LoaderFunction = async ({
   // request,
   // context,
 }) => {
-  console.log(params);
-  return null;
+  const res = await customFetch<SingleProductResponse>(
+    `/products/${params.productId}`,
+  );
+  return { ...res.data };
 };

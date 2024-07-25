@@ -2,6 +2,7 @@ import {
   Filters,
   ProductsContainer,
   PaginationRenderContainer,
+  PaginationRenderContainerRich,
 } from "@/components";
 
 export default function Products() {
@@ -10,6 +11,7 @@ export default function Products() {
       <Filters />
       <ProductsContainer />
       <PaginationRenderContainer />
+      <PaginationRenderContainerRich />
     </>
   );
 }

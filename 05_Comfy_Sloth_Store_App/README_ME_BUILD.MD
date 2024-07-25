@@ -2323,7 +2323,7 @@ const SingleProduct = () => {
   const [amount, setAmount] = useState(1);
 
   const addToCart = () => {
-    consol.log('add to cart');
+    console.log('add to cart');
   };
 
   return <h1 className='text-4xl'>SingleProduct Page</h1>;

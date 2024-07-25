@@ -25,3 +25,14 @@ export const loaderAllProducts: LoaderFunction = async ({
   });
   return { ...res.data, searchParamsObject };
 };
+
+//-----------------------------
+
+export const loaderSingleProduct: LoaderFunction = async ({
+  params,
+  // request,
+  // context,
+}) => {
+  console.log(params);
+  return null;
+};

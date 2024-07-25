@@ -47,6 +47,11 @@ export default function SingleProduct() {
           </p>
           <p className="mt-6 leading-8">{product.attributes.description}</p>
           {/* COLORS */}
+          <SelectProductColor
+            colors={product.attributes.colors}
+            productColor={productColor}
+            setProductColor={setProductColor}
+          />
 
           {/* AMOUNT */}
 

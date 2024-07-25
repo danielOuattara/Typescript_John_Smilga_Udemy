@@ -92,7 +92,7 @@ type ConstructUrlParams = {
   pathname: string;
 };
 
-type ConstructPrevOrNextParams = {
+type ConstructPreviousOrNextParams = {
   currentPage: number;
   pageCount: number;
   search: string;

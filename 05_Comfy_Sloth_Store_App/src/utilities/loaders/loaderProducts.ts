@@ -1,11 +1,15 @@
 import { customFetch } from "@/utilities";
 import { type LoaderFunction } from "react-router-dom";
 
+//-----------------------------
+
 export const loaderFeaturedProducts: LoaderFunction =
   async (): Promise<ProductsResponse> => {
     const res = await customFetch<ProductsResponse>("/products?featured=true");
     return { ...res.data };
   };
+
+//-----------------------------
 
 export const loaderAllProducts: LoaderFunction = async ({
   // params,

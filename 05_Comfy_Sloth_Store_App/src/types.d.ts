@@ -99,15 +99,26 @@ type ConstructPreviousOrNextParams = {
   pathname: string;
 };
 
-// single product
+// single product : see types.single-product.ts
 
-// type SingleProductResponse = {
-//   data: Product;
-//   meta: Record<string, never>;
-// };
+// cart & cartItem
 
-// type SelectProductColorProps = {
-//   colors: string[];
-//   productColor: string;
-//   setProductColor: React.Dispatch<React.SetStateAction<string>>;
-// };
+type CartItem = {
+  cartId: string;
+  productId: number;
+  image: string;
+  title: string;
+  price: string;
+  amount: number;
+  productColor: string;
+  company: string;
+};
+
+type CartState = {
+  cartItems: CartItem[];
+  quantityItemsInCart: number;
+  cartTotal: number;
+  shipping: number;
+  tax: number;
+  orderTotal: number;
+};

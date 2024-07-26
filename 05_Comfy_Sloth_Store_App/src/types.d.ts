@@ -109,14 +109,14 @@ type CartItem = {
   image: string;
   title: string;
   price: string;
-  amount: number;
+  quantity: number;
   productColor: string;
   company: string;
 };
 
 type CartState = {
   cartItems: CartItem[];
-  quantityItemsInCart: number;
+  totalItemsInCart: number;
   cartTotal: number;
   shipping: number;
   tax: number;

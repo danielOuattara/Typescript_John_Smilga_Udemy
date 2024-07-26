@@ -104,21 +104,21 @@ type ConstructPreviousOrNextParams = {
 // cart & cartItem
 
 type CartItem = {
-  cartId: string;
+  cartItemId: string;
   productId: number;
   image: string;
   title: string;
   price: string;
   quantity: number;
-  productColor: string;
+  color: string;
   company: string;
 };
 
 type CartState = {
   cartItems: CartItem[];
-  totalItemsInCart: number;
-  cartTotal: number;
+  cartTotalItems: number;
+  cartTotalPrice: number;
   shipping: number;
   tax: number;
-  orderTotal: number;
+  orderTotalPrice: number;
 };

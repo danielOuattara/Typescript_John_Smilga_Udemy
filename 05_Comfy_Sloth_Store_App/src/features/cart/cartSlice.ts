@@ -19,6 +19,9 @@ const updateLocalStorage = (state: CartState) => {
   localStorage.setItem("comfy-cart", JSON.stringify(state));
 };
 
+const resetLocalStorage = () => {
+  localStorage.setItem("comfy-cart", JSON.stringify(defaultState));
+};
 const cartSlice = createSlice({
   name: "cart",
   initialState: getCartFromLocalStorage(),
@@ -38,7 +41,10 @@ const cartSlice = createSlice({
       updateLocalStorage(state);
       toast({ description: "Item added to cart" });
     },
-    clearCart: () => {},
+    clearCart: () => {
+      resetLocalStorage();
+      return defaultState;
+    },
     removeItemFromCart: () => {},
     editItemInCart: () => {},
     calculateTotalPrices: (state) => {

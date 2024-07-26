@@ -110,7 +110,7 @@ type CartItem = {
   title: string;
   price: string;
   quantity: number;
-  color: string;
+  productColor: string;
   company: string;
 };
 

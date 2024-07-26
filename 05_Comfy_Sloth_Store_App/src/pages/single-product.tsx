@@ -5,17 +5,31 @@ import { Separator } from "@/components/ui/separator";
 import { SelectProductColor, SelectProductQuantity } from "@/components";
 import { formatMoney } from "@/utilities";
 import { EnumLocation, SingleProductResponse } from "@/types.single-product";
+import { cartActions } from "@/features/cart/cartSlice";
+import { useAppDispatch } from "@/hooks";
 
 export default function SingleProduct() {
+  const dispatch = useAppDispatch();
   const { data: product } = useLoaderData() as SingleProductResponse;
-
   const [quantity, setQuantity] = useState(1);
   const [productColor, setProductColor] = useState(
     product.attributes.colors[0],
   );
+  const { image, title, price, company } = product.attributes;
+  const productData: CartItem = {
+    cartItemId: product.id + productColor,
+    productId: product.id,
+    image,
+    title,
+    price,
+    quantity,
+    productColor,
+    company,
+  };
 
   const addToCart = () => {
     console.log("add to cart");
+    dispatch(cartActions.addToCart(productData));
   };
 
   return (

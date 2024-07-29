@@ -1,7 +1,7 @@
 import { Form, Link } from "react-router-dom";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FormInput } from "@/components";
+import { FormInput, SubmitButton } from "@/components";
 
 export default function Register() {
   return (
@@ -16,9 +16,11 @@ export default function Register() {
             <FormInput type="email" name="email" defaultValue="" />
             <FormInput type="password" name="password" defaultValue="" />
 
-            <Button type="submit" variant="default" className="w-full mt-4">
+            {/* <Button type="submit" variant="default" className="w-full mt-4">
               Submit
-            </Button>
+            </Button> */}
+
+            <SubmitButton text="Register" className="w-full mt-4" />
 
             <p className="text-center mt-4">
               Already a member ?

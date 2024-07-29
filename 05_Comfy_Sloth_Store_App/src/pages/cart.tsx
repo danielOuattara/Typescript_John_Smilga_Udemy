@@ -8,7 +8,7 @@ export default function Cart() {
   const { cartTotalItems } = useAppSelector((state) => state.cart);
 
   if (cartTotalItems === 0) {
-    return <SectionTitle text="Empty cart ☹️" />;
+    return <SectionTitle text="Empty cart" />;
   }
 
   return (

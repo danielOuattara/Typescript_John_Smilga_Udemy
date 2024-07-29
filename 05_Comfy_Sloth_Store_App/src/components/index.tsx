@@ -26,3 +26,4 @@ export { default as ProductsList } from "./ProductsList";
 export { default as SectionTitle } from "./SectionTitle";
 export { default as SelectProductColor } from "./SelectProductColor";
 export { default as SelectProductQuantity } from "./SelectProductQuantity";
+export { default as CartTotalRow } from "./CartTotalRow";

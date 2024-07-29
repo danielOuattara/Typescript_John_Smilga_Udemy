@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SelectProductColor, SelectProductQuantity } from "@/components";
 import { formatMoney } from "@/utilities";
-import { EnumLocation, SingleProductResponse } from "@/types.single-product";
+import {
+  EnumLocation,
+  SingleProductResponse,
+} from "@/types/types.single-product";
 import { cartActions } from "@/features/cart/cartSlice";
 import { useAppDispatch } from "@/hooks";
 

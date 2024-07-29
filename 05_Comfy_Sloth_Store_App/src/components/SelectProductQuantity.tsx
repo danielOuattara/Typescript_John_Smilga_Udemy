@@ -9,7 +9,7 @@ import {
   EnumLocation,
   ProductQuantityInCartItem,
   ProductQuantityInProductPage,
-} from "@/types.single-product";
+} from "@/types/types.single-product";
 
 export default function SelectProductQuantity({
   location,

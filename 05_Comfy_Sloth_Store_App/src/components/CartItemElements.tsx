@@ -3,7 +3,7 @@ import { useAppDispatch } from "@/hooks";
 import { Button } from "./ui/button";
 import { cartActions } from "@/features/cart/cartSlice";
 import { SelectProductQuantity } from "@/components";
-import { EnumLocation } from "@/types.single-product";
+import { EnumLocation } from "@/types/types.single-product";
 
 //-----------------------
 

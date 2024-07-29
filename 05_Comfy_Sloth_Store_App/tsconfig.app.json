@@ -29,5 +29,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "@types/types.single-product.ts", "@types/types.d.ts"]
 }

@@ -1,14 +1,39 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SubmitButton, FormInput } from "@/components";
 import { customFetch } from "@/utilities";
-import { type ReduxStore } from "@/store";
-import { loginUser } from "@/features/user/userSlice";
 import { useAppDispatch } from "@/hooks";
 import { AxiosResponse } from "axios";
+import { toast } from "@/components/ui/use-toast";
+import { userActions } from "@/features/user/userSlice";
 
 export default function Login() {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const loginAsGuestUser = async (): Promise<void> => {
+    console.log("guest user");
+
+    try {
+      const res: AxiosResponse = await customFetch.post("/auth/local", {
+        identifier: "test@test.com",
+        password: "secret",
+      });
+
+      const {
+        user: { username },
+        jwt,
+      } = res.data;
+
+      dispatch(userActions.loginUser({ username, jwt }));
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      toast({ description: "Login Failed" });
+    }
+  };
+
   return (
     <section className="h-screen grid place-items-center">
       <Card className="w-96 bg-muted">
@@ -24,7 +49,7 @@ export default function Login() {
             <Button
               type="button"
               variant="outline"
-              // onClick={loginAsGuestUser}
+              onClick={loginAsGuestUser}
               className="w-full mt-4"
             >
               Guest User

@@ -2,13 +2,14 @@ import { formatMoney } from "@/utilities";
 import { useAppDispatch } from "@/hooks";
 import { Button } from "./ui/button";
 import { cartActions } from "@/features/cart/cartSlice";
-
-import SelectProductAmount from "./SelectProductAmount";
-import { Mode } from "./SelectProductAmount";
+import { SelectProductQuantity } from "@/components";
+import { EnumLocation } from "@/types.single-product";
 
 export function CartItemColumn() {
   return <div>CartItemColumn</div>;
 }
+
+//-----------------------
 
 export const FirstColumn = ({
   image,
@@ -23,6 +24,8 @@ export const FirstColumn = ({
     className="h-24 w-24 rounded-lg sm:h-32 sm:w-32 object-cover"
   />
 );
+
+//-----------------------
 
 export const SecondColumn = ({
   title,
@@ -48,6 +51,40 @@ export const SecondColumn = ({
   </div>
 );
 
-export const ThirdColumn = () => <div>3rd column</div>;
+//-----------------------
 
-export const FourthColumn = () => <h2>4th column</h2>;
+export const ThirdColumn = ({
+  quantity,
+  cartItemId,
+}: {
+  quantity: number;
+  cartItemId: string;
+}) => {
+  const dispatch = useAppDispatch();
+
+  const setQuantity = (quantity: number) => {
+    dispatch(cartActions.editItemInCart({ cartItemId, quantity }));
+  };
+  return (
+    <div>
+      <SelectProductQuantity
+        location={EnumLocation.IN_CART_ITEM}
+        quantity={quantity}
+        setQuantity={setQuantity}
+      />
+      <Button
+        variant={"link"}
+        className="-ml-4"
+        onClick={() => dispatch(cartActions.removeItemFromCart(cartItemId))}
+      >
+        remove
+      </Button>
+    </div>
+  );
+};
+
+//-----------------------
+
+export const FourthColumn = ({ price }: { price: string }) => (
+  <p className="font-medium sm:ml-auto">{formatMoney(price)}</p>
+);

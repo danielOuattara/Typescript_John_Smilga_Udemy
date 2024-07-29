@@ -6,8 +6,6 @@ export default function CartTotals() {
   const { cartTotalItems, cartTotalPrice, shipping, tax, orderTotalPrice } =
     useAppSelector((state) => state.cart);
 
-  console.log(cartTotalItems, cartTotalPrice, shipping, tax, orderTotalPrice);
-
   return (
     <Card className="p-8 bg-muted">
       <CartTotalRow

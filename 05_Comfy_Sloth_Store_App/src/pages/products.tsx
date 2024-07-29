@@ -1,5 +1,5 @@
 import {
-  Filters,
+  ProductsSearchForm,
   ProductsContainer,
   PaginationRenderContainer,
   PaginationRenderContainerRich,
@@ -8,7 +8,7 @@ import {
 export default function Products() {
   return (
     <>
-      <Filters />
+      <ProductsSearchForm />
       <ProductsContainer />
       <PaginationRenderContainer />
       <PaginationRenderContainerRich />

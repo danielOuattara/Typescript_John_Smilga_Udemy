@@ -1,3 +1,4 @@
+import { SingleProductResponse } from "@/types/types.single-product";
 import { customFetch } from "@/utilities";
 import { type LoaderFunction } from "react-router-dom";
 

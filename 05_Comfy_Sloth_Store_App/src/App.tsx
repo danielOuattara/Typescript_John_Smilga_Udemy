@@ -5,6 +5,7 @@ import {
   loaderFeaturedProducts,
   loaderAllProducts,
   loaderSingleProduct,
+  actionRegister,
 } from "./utilities";
 
 const router = createBrowserRouter([
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <pages.Register />,
     errorElement: <pages.Error />,
+    action: actionRegister,
   },
 ]);
 

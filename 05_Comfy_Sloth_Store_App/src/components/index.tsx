@@ -1,10 +1,10 @@
-export { default as CartButton } from "./CartButton";
 // export { default as CartItemColumns } from "./CartItemColumns";
+export { default as CartButton } from "./CartButton";
 export { default as CartItemsList } from "./CartItemsList";
+export { default as CartTotalRow } from "./CartTotalRow";
 export { default as CartTotals } from "./CartTotals";
 export { default as ErrorElement } from "./ErrorElement";
 export { default as FeaturedProducts } from "./FeaturedProducts";
-export { default as ProductsSearchForm } from "./ProductsSearchForm";
 export { default as FormCheckbox } from "./FormCheckbox";
 export { default as FormInput } from "./FormInput";
 export { default as FormRange } from "./FormRange";
@@ -23,7 +23,8 @@ export { default as PaginationRenderContainerRich } from "./PaginationRenderCont
 export { default as ProductsContainer } from "./ProductsContainer";
 export { default as ProductsGrid } from "./ProductsGrid";
 export { default as ProductsList } from "./ProductsList";
+export { default as ProductsSearchForm } from "./ProductsSearchForm";
 export { default as SectionTitle } from "./SectionTitle";
 export { default as SelectProductColor } from "./SelectProductColor";
 export { default as SelectProductQuantity } from "./SelectProductQuantity";
-export { default as CartTotalRow } from "./CartTotalRow";
+export { default as SubmitButton } from "./SubmitButton";

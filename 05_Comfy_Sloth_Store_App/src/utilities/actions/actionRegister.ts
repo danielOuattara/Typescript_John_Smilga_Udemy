@@ -75,3 +75,23 @@ export const actionRegister_2: ActionFunction = async ({
     return null;
   }
 };
+
+export const actionLogin: ActionFunction = async ({
+  request,
+}): Promise<Response | null> => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+
+  try {
+    await customFetch.post("/auth/local/register", data);
+    toast({ description: "Registered" });
+    return redirect("/login");
+  } catch (error) {
+    const errorMsg =
+      error instanceof AxiosError
+        ? error.response?.data.error.message
+        : "Registration Failed";
+    toast({ description: errorMsg });
+    return null;
+  }
+};

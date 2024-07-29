@@ -5,19 +5,9 @@ import { cartActions } from "@/features/cart/cartSlice";
 import { SelectProductQuantity } from "@/components";
 import { EnumLocation } from "@/types.single-product";
 
-export function CartItemColumn() {
-  return <div>CartItemColumn</div>;
-}
-
 //-----------------------
 
-export const FirstColumn = ({
-  image,
-  title,
-}: {
-  image: string;
-  title: string;
-}) => (
+export const Image = ({ image, title }: { image: string; title: string }) => (
   <img
     src={image}
     alt={title}
@@ -27,7 +17,7 @@ export const FirstColumn = ({
 
 //-----------------------
 
-export const SecondColumn = ({
+export const Data = ({
   title,
   company,
   productColor,
@@ -53,7 +43,7 @@ export const SecondColumn = ({
 
 //-----------------------
 
-export const ThirdColumn = ({
+export const QuantityAndActions = ({
   quantity,
   cartItemId,
 }: {
@@ -85,6 +75,6 @@ export const ThirdColumn = ({
 
 //-----------------------
 
-export const FourthColumn = ({ price }: { price: string }) => (
+export const Price = ({ price }: { price: string }) => (
   <p className="font-medium sm:ml-auto">{formatMoney(price)}</p>
 );

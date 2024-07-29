@@ -68,7 +68,7 @@ export default function SingleProduct() {
             setProductColor={setProductColor}
           />
 
-          {/* QUANTITY */}
+          {/*SELECT QUANTITY */}
           <SelectProductQuantity
             location={EnumLocation.IN_PRODUCT_PAGE}
             quantity={quantity}

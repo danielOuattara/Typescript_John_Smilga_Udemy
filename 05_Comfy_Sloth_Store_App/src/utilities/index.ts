@@ -4,4 +4,4 @@ export * from "./themeApplier";
 export * from "./loaders/loaderProducts";
 export * from "./formatMoney";
 export * from "./paginationUrlWorkers";
-export * from "./actions/actionRegister";
+export * from "./actions/actionUser";

@@ -1,8 +1,9 @@
 import { ActionFunction, redirect } from "react-router-dom";
 import { customFetch } from "../customFetch";
 import { toast } from "@/components/ui/use-toast";
-import { AxiosError } from "axios";
-
+import { AxiosError, AxiosResponse } from "axios";
+import { ReduxStore } from "@/hooks";
+import { userActions } from "@/features/user/userSlice";
 //-------------------------------------------------
 
 export const actionRegister: ActionFunction = async ({
@@ -76,22 +77,30 @@ export const actionRegister_2: ActionFunction = async ({
   }
 };
 
-export const actionLogin: ActionFunction = async ({
-  request,
-}): Promise<Response | null> => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+//-------------------------------------------------
 
-  try {
-    await customFetch.post("/auth/local/register", data);
-    toast({ description: "Registered" });
-    return redirect("/login");
-  } catch (error) {
-    const errorMsg =
-      error instanceof AxiosError
-        ? error.response?.data.error.message
-        : "Registration Failed";
-    toast({ description: errorMsg });
-    return null;
-  }
-};
+export const actionLogin =
+  (store: ReduxStore): ActionFunction =>
+  async ({ request }): Promise<Response | null> => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+
+    try {
+      const res: AxiosResponse = await customFetch.post("/auth/local/", data);
+      const {
+        user: { username },
+        jwt,
+      } = res.data;
+
+      store.dispatch(userActions.loginUser({ username, jwt }));
+      toast({ description: "Login successful" });
+      return redirect("/");
+    } catch (error) {
+      const errorMsg =
+        error instanceof AxiosError
+          ? error.response?.data.error.message
+          : "Registration Failed";
+      toast({ description: errorMsg });
+      return null;
+    }
+  };

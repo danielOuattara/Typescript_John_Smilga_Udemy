@@ -6,7 +6,9 @@ import {
   loaderAllProducts,
   loaderSingleProduct,
   actionRegister,
+  actionLogin,
 } from "./utilities";
+import { store } from "./store";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <pages.Login />,
     errorElement: <pages.Error />,
+    action: actionLogin(store),
   },
   {
     path: "/register",

@@ -1,4 +1,4 @@
-import { SelectProductColorProps } from "@/types.single-product";
+import { SelectProductColorProps } from "@/types/types.single-product";
 
 export default function SelectProductColor({
   colors,

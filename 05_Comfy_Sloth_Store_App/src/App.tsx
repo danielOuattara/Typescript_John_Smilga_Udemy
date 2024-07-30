@@ -10,6 +10,7 @@ import {
   actionLogin,
   loaderUser,
 } from "./utilities";
+import { actionCheckout } from "./utilities/actions/actionCheckout";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
         element: <pages.Checkout />,
         errorElement: <ErrorElement />,
         loader: loaderUser(store),
+        action: actionCheckout(store),
       },
       {
         path: "/orders",

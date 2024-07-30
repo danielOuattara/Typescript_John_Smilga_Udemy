@@ -4,7 +4,7 @@ import { useAppSelector } from "@/hooks";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  const user = null;
+  const { user } = useAppSelector((state) => state.user);
   const { cartTotalItems } = useAppSelector((state) => state.cart);
 
   if (cartTotalItems === 0) {
@@ -20,15 +20,13 @@ export default function Cart() {
         </div>
         <div className="lg:col-span-4 lg:pl-4">
           <CartTotals />
-          {user ? (
-            <Button asChild className="mt-8 w-full">
+          <Button asChild className="mt-8 w-full">
+            {user ? (
               <Link to="/checkout">Proceed to checkout</Link>
-            </Button>
-          ) : (
-            <Button asChild className="mt-8 w-full">
+            ) : (
               <Link to="/login">Please Login</Link>
-            </Button>
-          )}
+            )}
+          </Button>
         </div>
       </div>
     </>

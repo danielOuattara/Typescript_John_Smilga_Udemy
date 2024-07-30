@@ -1,8 +1,8 @@
 export const links: TypeLink[] = [
-  { href: "/", label: "home" },
-  { href: "/about", label: "about" },
-  { href: "/products", label: "products" },
-  { href: "/cart", label: "cart" },
-  { href: "/checkout", label: "checkout" },
-  { href: "/orders", label: "orders" },
+  { href: "/", label: "home", restricted: false },
+  { href: "/about", label: "about", restricted: false },
+  { href: "/products", label: "products", restricted: false },
+  { href: "/cart", label: "cart", restricted: false },
+  { href: "/checkout", label: "checkout", restricted: true },
+  { href: "/orders", label: "orders", restricted: true },
 ];

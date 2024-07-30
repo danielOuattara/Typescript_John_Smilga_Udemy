@@ -1,6 +1,7 @@
 type TypeLink = {
   href: string;
   label: string;
+  restricted: boolean;
 };
 
 type Theme = "dark" | "light" | "system";

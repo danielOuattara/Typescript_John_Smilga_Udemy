@@ -4,5 +4,6 @@ type Checkout = {
   chargeTotal: number;
   orderTotal: string;
   cartItems: CartItem[];
-  cartTotalItems: number;
+  // cartTotalItems: number;
+  numItemsInCart: number;
 };

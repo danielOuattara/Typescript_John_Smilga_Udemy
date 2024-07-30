@@ -1,14 +1,15 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import * as pages from "./pages";
 import { ErrorElement } from "./components";
+import { store } from "./store";
 import {
   loaderFeaturedProducts,
   loaderAllProducts,
   loaderSingleProduct,
   actionRegister,
   actionLogin,
+  loaderUser,
 } from "./utilities";
-import { store } from "./store";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: <pages.Checkout />,
         errorElement: <ErrorElement />,
+        loader: loaderUser(store),
       },
       {
         path: "/orders",

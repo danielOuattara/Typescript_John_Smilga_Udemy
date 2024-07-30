@@ -1,12 +1,9 @@
-import { ComplexPaginationContainer, SectionTitle } from "@/components";
+import { PaginationContainerRich, SectionTitle } from "@/components";
 import OrdersList from "@/components/OrdersList";
 import { useLoaderData } from "react-router-dom";
 
 export default function Orders() {
-  const { meta, data } = useLoaderData() as OrdersResponse;
-
-  console.log("meta = ", meta);
-  console.log("data = ", data);
+  const { meta } = useLoaderData() as OrdersResponse;
 
   if (meta.pagination.total < 1) {
     return <SectionTitle text="Please make an order" />;
@@ -15,7 +12,7 @@ export default function Orders() {
     <>
       <SectionTitle text="Your Orders" />
       <OrdersList />
-      <ComplexPaginationContainer />
+      <PaginationContainerRich meta={meta} />
     </>
   );
 }

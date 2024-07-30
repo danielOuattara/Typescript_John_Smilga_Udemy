@@ -1,17 +1,19 @@
 import {
   ProductsSearchForm,
   ProductsContainer,
-  PaginationRenderContainer,
-  PaginationRenderContainerRich,
+  PaginationContainer,
+  PaginationContainerRich,
 } from "@/components";
+import { useLoaderData } from "react-router-dom";
 
 export default function Products() {
+  const { meta } = useLoaderData() as ProductsResponseWithSearchParams;
   return (
     <>
       <ProductsSearchForm />
       <ProductsContainer />
-      <PaginationRenderContainer />
-      <PaginationRenderContainerRich />
+      <PaginationContainer />
+      <PaginationContainerRich meta={meta} />
     </>
   );
 }

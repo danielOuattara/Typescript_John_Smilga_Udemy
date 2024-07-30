@@ -9,7 +9,7 @@ import {
 import { constructUrl, constructPreviousOrNextUrl } from "@/utilities";
 import { useLoaderData, useLocation } from "react-router-dom";
 
-export default function PaginationRenderContainer() {
+export default function PaginationContainer() {
   const { search, pathname } = useLocation();
   const { meta } = useLoaderData() as ProductsResponseWithSearchParams;
   const { pageCount, page } = meta.pagination;

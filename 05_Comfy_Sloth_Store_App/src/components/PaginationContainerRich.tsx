@@ -1,5 +1,5 @@
 import { constructPreviousOrNextUrl, constructUrl } from "@/utilities";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   Pagination,
   PaginationContent,
@@ -10,10 +10,12 @@ import {
   PaginationPrevious,
 } from "./ui/pagination";
 
-export default function PaginationRenderContainerRich() {
-  const { meta } = useLoaderData() as ProductsResponseWithSearchParams;
-  const { pageCount, page } = meta.pagination;
+type TypeProps = {
+  meta: ProductsMeta | OrdersMeta;
+};
 
+export default function PaginationContainerRich({ meta }: TypeProps) {
+  const { pageCount, page } = meta.pagination;
   const { search, pathname } = useLocation();
 
   if (pageCount < 2) return null;

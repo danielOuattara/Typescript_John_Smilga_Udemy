@@ -3,6 +3,7 @@ export { default as CartButton } from "./CartButton";
 export { default as CartItemsList } from "./CartItemsList";
 export { default as CartTotalRow } from "./CartTotalRow";
 export { default as CartTotals } from "./CartTotals";
+export { default as CheckoutForm } from "./CheckoutForm";
 export { default as ErrorElement } from "./ErrorElement";
 export { default as FeaturedProducts } from "./FeaturedProducts";
 export { default as FormCheckbox } from "./FormCheckbox";

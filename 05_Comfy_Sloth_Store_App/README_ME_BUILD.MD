@@ -3577,7 +3577,7 @@ export const action =
     }
   };
 
-  
+
 const CheckoutForm = () => {
   return (
     <Form method='POST' className='flex flex-col gap-y-4'>
@@ -3664,6 +3664,7 @@ export const loader =
       return null;
     }
   };
+
 const Orders = () => {
   const { meta } = useLoaderData() as OrdersResponse;
   if (meta.pagination.total < 1) {

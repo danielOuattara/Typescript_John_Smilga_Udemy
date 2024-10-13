@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Armchair } from "lucide-react";
+import { ShipWheel } from "lucide-react";
 
 export default function Logo() {
   return (
@@ -7,7 +7,7 @@ export default function Logo() {
       to="/"
       className="hidden lg:flex justify-center items-center bg-primary p-2 rounded-lg text-white"
     >
-      <Armchair className="w-8 h-8" />
+      <ShipWheel className="w-8 h-8" />
     </Link>
   );
 }

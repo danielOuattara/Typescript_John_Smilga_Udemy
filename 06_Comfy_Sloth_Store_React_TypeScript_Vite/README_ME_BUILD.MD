@@ -633,8 +633,8 @@ Header.tsx
 
 # create components
 
-touch src/components/{Navbar,Logo,LinksDropdown,NavLinks,ModeToggle,CartButton}.tsx && 
-for file in src/components/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
+touch src/components/navbar/{Navbar,Logo,LinksDropdown,NavLinks,ModeToggle,CartButton}.tsx && 
+for file in src/components/navbar/*.tsx; do echo "export default function $(basename "$file" .tsx)() {
   return <h2 className=\"text-4xl\">$(basename "$file" .tsx)</h2>;
 }" > "$file"; done
 

@@ -156,7 +156,7 @@ export default defineConfig({
 Run the `shadcn-ui` init command to setup your project:
 
 ```sh
-npx shadcn-ui@latest init
+npx shadcn@latest init
 ```
 
 - Configure `components.json`
@@ -178,7 +178,7 @@ Are you using React Server Components? › no / yes (no)
 - test shadcn/ui
 
 ```sh
-npx shadcn-ui@latest add button
+npx shadcn@latest add button
 ```
 
 - restart server
@@ -735,7 +735,7 @@ export * from './links';
 ## DropdownMenu Component - Shadcn
 
 ```sh
-npx shadcn-ui@latest add dropdown-menu
+npx shadcn@latest add dropdown-menu
 ```
 
 [DropdownMenu](https://ui.shadcn.com/docs/components/dropdown-menu)
@@ -1226,7 +1226,7 @@ App.tsx
 [Separator](https://ui.shadcn.com/docs/components/separator)
 
 ```sh
-npx shadcn-ui@latest add separator
+npx shadcn@latest add separator
 ```
 
 ## SectionTitle
@@ -1282,7 +1282,7 @@ export const formatAsDollars = (price: string | number): string => {
 [Card](https://ui.shadcn.com/docs/components/card)
 
 ```sh
-npx shadcn-ui@latest add card
+npx shadcn@latest add card
 
 ```
 
@@ -1365,7 +1365,7 @@ export default Hero;
 [Carousel](https://ui.shadcn.com/docs/components/carousel)
 
 ```sh
-npx shadcn-ui@latest add carousel
+npx shadcn@latest add carousel
 
 ```
 
@@ -1566,7 +1566,7 @@ export default ProductsContainer;
 [Skeleton](https://ui.shadcn.com/docs/components/skeleton)
 
 ```sh
-npx shadcn-ui@latest add skeleton
+npx shadcn@latest add skeleton
 ```
 
 ## Loading Component
@@ -1628,7 +1628,7 @@ export default HomeLayout;
 - Label, Input, Select, Slider, Checkbox
 
 ```sh
-npx shadcn-ui@latest add label input select slider checkbox
+npx shadcn@latest add label input select slider checkbox
 ```
 
 ## Filters - Initial Setup
@@ -1961,7 +1961,7 @@ export default FormCheckbox;
 [Shadcn Pagination](https://ui.shadcn.com/docs/components/pagination)
 
 ```sh
-npx shadcn-ui@latest add pagination
+npx shadcn@latest add pagination
 
 ```
 
@@ -2503,7 +2503,7 @@ import { Mode } from '@/components/SelectProductAmount';
 [Toast](https://ui.shadcn.com/docs/components/toast)
 
 ```sh
-npx shadcn-ui@latest add toast
+npx shadcn@latest add toast
 
 ```
 
@@ -3686,7 +3686,7 @@ export default Orders;
 [Table Component](https://ui.shadcn.com/docs/components/table)
 
 ```sh
-npx shadcn-ui@latest add table
+npx shadcn@latest add table
 
 ```
 

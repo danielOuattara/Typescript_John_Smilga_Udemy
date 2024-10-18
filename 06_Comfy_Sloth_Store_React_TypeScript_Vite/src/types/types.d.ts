@@ -1,6 +1,7 @@
 type TypeLink = {
   href: string;
   label: string;
+  icon: React.ReactNode;
 };
 
 type Theme = "dark" | "light" | "system";
